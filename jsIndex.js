@@ -1,16 +1,118 @@
 // Basic Calculator
 
-    // get the user inputs
-    var calcType = prompt('Choose the type of Calculator you would like, (b)asic or (a)dvanced')
-    var value1 = prompt('enter first value');
-    var value2 = prompt('enter the second value');
-    var choice = prompt('Choose your action (a)dd (s)ubtract (m)ultiply (d)ivide') || "a";
-
+    // get the user inputs, they get to choose which calculator they want to use.
+    var calcType = prompt('Choose the type of Calculator you would like, (b)asic , (a)dvanced or bmi')
+    var result;
+    // If statement for choosing the basic calculator.
     if(calcType == "b" || calcType == "basic"){
       var value1 = prompt('enter first value');
-      var choice = prompt('Choose your action (a)dd (s)ubtract (m)ultiply (d)ivide (m)odulus');
+      var choice = prompt('Choose your action (a)dd (s)ubtract (mu)ltiply (d)ivide (mo)dulus');
       var value2 = prompt('enter the second value');
-    }else if()
+    // Getting the user imputs for the function.
+      switch (choice) {
+        case "a":
+          console.log("a");
+          result = +value1 + +value2;
+        break;
+        case "add":
+          console.log("a");
+          result = +value1 + +value2;
+        break;
+        case "s":
+          console.log("s");
+          result = value1 - value2;
+        break;
+        case "subtract":
+          console.log("s");
+          result = value1 - value2;
+        break;
+        case "mu":
+          console.log("mu");
+          result = value1 * value2;
+        break;
+        case "multiply":
+          console.log("mu");
+          result = value1 * value2;
+        break;
+        case "divide":
+          console.log("d");
+          result = value1 / value2;
+        break;
+        case "d":
+          console.log("d");
+          result = value1 / value2;
+        break;
+        case "mo":
+          console.log("mo");
+          result = value1 % value2;
+        break;
+        case "modulus":
+          console.log("mo");
+          result = value1 % value2;
+        break;
+        // having 2 things the user can type to get the functionality they want
+        // and getting a result from the users imputs.
+        default:
+          alert("Sorry that's an invalid request");
+        // This will be displayed if the user puts an invalid answer into
+        // any of the categorys.
+      }
+        // The else if statement for the advanced calculator.
+    }else if (calcType == "a" || calcType == "advanced") {
+      var value1 = prompt('enter first value');
+      var choice = prompt('Choose your action (p)ower (s)quare root');
+        if(choice == "p" || choice == "power"){
+          var value2 = prompt('to the power of the second value');
+            console.log(value2);
+        }
+        // Again getting the user imputs but only getting the second one when
+        // using the power opperand as you do not need a second value.
+      switch (choice) {
+        case "s":
+          result = Math.sqrt(value1);
+          break;
+          case "square root":
+            result = Math.sqrt(value1);
+          break;
+          case "p":
+            result = Math.pow(value1, value2);
+          break;
+          case "power":
+            result = Math.pow(value1, value2);
+          break;
+          // having 2 things the user can type to get the functionality they want
+          // and getting a result from the users imputs.
+        default:
+          alert("Sorry that's an invalid request");
+          // This will be displayed if the user puts an invalid answer into
+          // any of the categorys.
+      }
+
+    }else if (calcType == "bmi") {
+      var choice = prompt('choose (i)mperial, pounds and inches, or (m)etric, kilograms and meters');
+        if(choice == "i" || choice == "imperial"){
+          var value1 = prompt('enter weight in pounds');
+          var value2 = prompt('enter height in inches');
+          var bmi1 = value2 * value2
+          var bmi2 = value1 / bmi1;
+          var result = bmi2 * 703;
+          // The impirical calculation for bmi.
+        }else if (choice == "m" || choice == "metric"){
+          var value1 = prompt('enter weight in kilograms');
+          var value2 = prompt('enter height in meters');
+          var bmi1 = value1 / value2;
+          result = bmi1 / value2;
+          // The metric calculation for bmi.
+        }else{
+          alert("Sorry that's an invalid request");
+          // This will be displayed if the user puts an invalid answer into
+          // any of the categorys.
+        }
+
+
+    }
+        alert("Your result is " + result);
+        // Telling the user what their result is.
 
 
     // Calculator
